@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live TV Streaming 20.0 - Ultra Advanced</title>
+    <link rel="stylesheet" href="premium.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🔒 Welcome to Live TV Streaming 20.0</h1>
+
+        <!-- Login Section -->
+        <div class="auth-section" id="authSection">
+            <input type="text" id="loginUsername" placeholder="Enter Username">
+            <input type="password" id="loginPassword" placeholder="Enter Password">
+            <button onclick="login()">Login</button>
+            <p>Don't have an account? <a href="#" onclick="showSignup()">Sign up</a></p>
+        </div>
+
+        <!-- Signup Section -->
+        <div class="auth-section" id="signupSection" style="display: none;">
+            <input type="text" id="signupUsername" placeholder="Choose a Username">
+            <input type="password" id="signupPassword" placeholder="Create a Password">
+            <input type="text" id="promoCode" placeholder="Enter Promo Code (Optional)">
+            <button onclick="register()">Sign Up</button>
+            <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+        </div>
+
+        <!-- User Dashboard -->
+        <div id="dashboardSection" style="display: none;">
+            <h2>👤 Welcome, <span id="userDisplayName"></span></h2>
+            <p>Subscription: <span id="userSubscription"></span> (Expires: <span id="userExpiry"></span>)</p>
+            <p>💰 Referral Code: <span id="referralCode"></span></p>
+            <button class="toggle-btn" onclick="logout()">Logout</button>
+
+            <!-- Upgrade to Premium -->
+            <div id="upgradeSection">
+                <button onclick="upgradeToPremium()">Upgrade to Premium</button>
+            </div>
+        </div>
+
+        <!-- Admin Dashboard -->
+        <div id="adminPanel" style="display: none;">
+            <h2>🔑 Admin Panel - User & Promo Code Management</h2>
+            <h3>📌 Online Users:</h3>
+            <pre id="onlineUsers"></pre>
+            <h3>📋 All Registered Users:</h3>
+            <pre id="allUsers"></pre>
+            <h3>🔑 Available Promo Codes:</h3>
+            <pre id="promoList"></pre>
+            <button onclick="generatePromoCode(30)">Generate 30-Day Code</button>
+            <button onclick="generatePromoCode(7)">Generate 7-Day Code</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
